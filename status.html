@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Pages Status - TDD Template</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #0d1117;
+            color: #c9d1d9;
+        }
+        .status-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+        .status-ok {
+            color: #3fb950;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .status-info {
+            color: #8b949e;
+            margin: 10px 0;
+        }
+        a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .links {
+            list-style: none;
+            padding: 0;
+        }
+        .links li {
+            margin: 10px 0;
+            padding: 10px;
+            background: #0d1117;
+            border-radius: 4px;
+        }
+        .timestamp {
+            color: #8b949e;
+            font-size: 12px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="status-card">
+        <div class="status-ok">✅ GitHub Pages is Active!</div>
+        <div class="status-info">The TDD Project Template site is successfully deployed.</div>
+    </div>
+
+    <div class="status-card">
+        <h2>📊 Site Status Check</h2>
+        <ul class="links">
+            <li>🏠 <a href="/">Home Page (HTML)</a> - Static landing page</li>
+            <li>📚 <a href="/docs/">Jekyll Documentation</a> - Full Jekyll site</li>
+            <li>📊 <a href="/docs/gantt_progress.html">Progress Dashboard</a> - Interactive tracker</li>
+            <li>📋 <a href="/docs/mindmap.mmd">Mindmap Diagram</a> - Project structure</li>
+            <li>🔄 <a href="/docs/flow_dependencies.mmd">Dependencies</a> - Task flow</li>
+            <li>📅 <a href="/docs/gantt_schedule.mmd">Gantt Chart</a> - Timeline</li>
+        </ul>
+    </div>
+
+    <div class="status-card">
+        <h2>🔗 Quick Links</h2>
+        <ul class="links">
+            <li>📦 <a href="https://github.com/davidcantidio/tdd-project-template">GitHub Repository</a></li>
+            <li>🚀 <a href="https://github.com/davidcantidio/tdd-project-template/generate">Use This Template</a></li>
+            <li>📊 <a href="https://davidcantidio.github.io/test-tdd-project/">Live Demo</a></li>
+            <li>🐛 <a href="https://github.com/davidcantidio/tdd-project-template/issues">Report Issues</a></li>
+        </ul>
+    </div>
+
+    <div class="timestamp">
+        Page generated: <span id="timestamp"></span>
+    </div>
+
+    <script>
+        document.getElementById('timestamp').textContent = new Date().toISOString();
+        
+        // Check if main page loads
+        fetch('/')
+            .then(r => console.log('Main page status:', r.status))
+            .catch(e => console.log('Main page error:', e));
+            
+        // Check if Jekyll site loads
+        fetch('/docs/')
+            .then(r => console.log('Jekyll site status:', r.status))
+            .catch(e => console.log('Jekyll site error:', e));
+    </script>
+</body>
+</html>
